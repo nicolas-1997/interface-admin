@@ -1,0 +1,55 @@
+<div #columnaContainer class="columna-container" [class.active]="editState">
+  <div class="columnas">
+    <div class="col uno">
+      <p>
+        {{fullName}}
+      </p>
+    </div>
+    <div class="col dos">
+      <p>
+        {{rol}}
+      </p>
+    </div>
+    <div class="col tres">
+      <p>
+        {{address}}
+      </p>
+    </div>
+    <div class="col cuatro">
+      <p>
+        {{cellPhone}}
+      </p>
+    </div>
+    <div class="col cinco">
+      <p>
+        {{email}}
+      </p>
+    </div>
+    <div class="col seis">
+      <p>
+        {{vehicle}}
+      </p>
+    </div>
+    <div class="col siete">
+      <button (click)="changeState()">
+        <i class='bx bxs-edit-alt'></i>
+      </button>
+      <p>
+        <i class='bx bx-trash'></i>
+      </p>
+    </div>
+  </div>
+  <div class="edit-col" *ngIf="editState">
+    <div class="input-group">
+      <input type="text" placeholder="fullName" [(ngModel)]="fullName">
+      <input type="text" placeholder="email" [(ngModel)]="email">
+      <input type="text" placeholder="address" [(ngModel)]="address">
+      <input type="text" placeholder="cellPhone" [(ngModel)]="cellPhone">
+      <input type="text" placeholder="observations" [(ngModel)]="observations">
+      <input type="text" placeholder="password" [(ngModel)]="password">
+      <input type="text" placeholder="rolID" [(ngModel)]="rolID">
+      <input type="text" placeholder="rolName" [(ngModel)]="rolName">
+    </div>
+    <button (click)="editUser()">enviar datos</button>
+  </div>
+</div>

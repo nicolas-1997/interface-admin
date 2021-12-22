@@ -1,0 +1,32 @@
+<div class="register--form">
+  <div class="left">
+    <h1>
+      Registro de {{title}}
+    </h1>
+    <img src="../../../../../assets/img/addUser.svg" alt="add User">
+  </div>
+
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="input-group">
+      <input type="email" placeholder=" email" formControlName="email">
+      <input type="password" placeholder="Contraseña"formControlName="password">
+    </div>
+
+    <div class="input-group ">
+      <input type="text" placeholder=" Nombre Completo"formControlName="fullName">
+      <input type="text" placeholder="Direccion" formControlName="address">
+    </div>
+
+    <div class="input-group">
+      <input type="number" placeholder="Numero de Contacto" formControlName="cellPhone">
+      <!-- <input type="text" placeholder="Vehiculo"formControlName="name"> -->
+    </div>
+
+    <div class="input-group observations">
+      <textarea name="" id="" cols="50" rows="5" placeholder="Ingrese algun comentario" formControlName="observations"></textarea>
+    </div>
+
+      <button>Registrar nuevo {{title}} </button>
+  </form>
+</div>

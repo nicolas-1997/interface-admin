@@ -1,0 +1,119 @@
+.home-users--container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 85%;
+
+  .header,
+  .body {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header {
+    grid-row: 1;
+  }
+  .body {
+    grid-row: 2;
+
+    .main-container {
+      width: 90%;
+      height: 90%;
+
+      display: grid;
+      grid-template-columns: repeat(3, 33.3%);
+      grid-template-rows: repeat(2, 1fr);
+
+      .card {
+        width: 90%;
+        height: 60%;
+        backdrop-filter: blur(1px);
+        border: none;
+        background: rgb(30,69,59);
+        background: linear-gradient(110deg, rgba(30,69,59,1) 40%, rgba(11,114,94,1) 100%);
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+
+        &.admin {
+          background: rgb(164, 8, 27);
+          background: linear-gradient(100deg, rgba(164, 8, 27, 1) 49%, rgba(236, 11, 35, 1) 95%);
+        }
+        &.cliente {
+          background: rgb(208, 116, 7);
+          background: linear-gradient(98deg, rgba(208, 116, 7, 1) 54%, rgba(205, 152, 56, 1) 100%);
+        }
+
+        .info-card {
+          grid-column: 1;
+          display: grid;
+          grid-template-columns: 100%;
+          grid-template-rows: 60% 40%;
+          .title {
+            grid: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            h1 {
+              font-size: 2.5rem;
+              margin-left: 1.5rem;
+            }
+            i {
+              font-size: 2.5rem;
+              margin-bottom: 1.5rem;
+              margin-left: 2rem;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: white;
+            grid-row: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            font-size: 1.3rem;
+
+            i {
+              font-size: 15px;
+              margin-bottom: 0.2rem;
+            }
+          }
+        }
+        .cant-user {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          h1 {
+            font-size: 3.5rem;
+          }
+          p {
+            font-size: 1.8rem;
+          }
+        }
+
+        &.info {
+          .info-card {
+            .title {
+              h1 {
+                font-size: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

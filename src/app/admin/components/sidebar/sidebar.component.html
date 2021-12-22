@@ -1,0 +1,136 @@
+<div class="sidebar--container">
+  <!-- Viajes -->
+  <section class="Viajes">
+
+    <div class="title--container">
+      <div  class="title">
+        <a [routerLink]="['viajes']" routerLinkActive="router-link-active">
+          <i class='bx bxs-truck'></i>
+        </a>
+        <p>Viajes</p>
+      </div>
+
+      <div class="btn-content">
+        <button (click)="changeState()" *ngIf="mostrarViajes; else ocultarViajes"><i
+            class='bx bx-chevron-down'></i></button>
+      </div>
+      <ng-template #ocultarViajes>
+        <button (click)="changeState()"><i class='bx bx-chevron-up'></i></button>
+      </ng-template>
+
+    </div>
+
+    <div class="list--container" *ngIf="mostrarViajes">
+      <ul class="list">
+        <li class="item">
+          <a [routerLink]="['../admin/viajes/activos']" routerLinkActive="router-link-active">Activos</a>
+        </li>
+        <li class="item">
+          <a [routerLink]="['../admin/viajes/pendientes']" routerLinkActive="router-link-active">Pendientes</a>
+        </li>
+        <li class="item">
+          <a [routerLink]="['../admin/viajes/en-curso']" routerLinkActive="router-link-active" class="item-list">En
+            Curso</a>
+        </li>
+        <li class="item">
+          <a [routerLink]="['../admin/viajes/history']" routerLinkActive="router-link-active">Hitorial</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Users -->
+  <section class="users">
+    <div class="title--container">
+      <div  class="title">
+        <a [routerLink]="['users']" routerLinkActive="router-link-active">
+          <i class='bx bxs-user'></i>
+        </a>
+        <p>Users</p>
+      </div>
+
+      <div class="btn-content">
+        <button (click)="changeStateUsuarios()" *ngIf="mostrarUsuario; else ocultarUsuarios">
+          <i class='bx bx-chevron-down'></i>
+        </button>
+      </div>
+      <ng-template #ocultarUsuarios>
+        <button (click)="changeStateUsuarios()"><i class='bx bx-chevron-up'></i></button>
+      </ng-template>
+
+    </div>
+
+    <div class="list--container" *ngIf="mostrarUsuario">
+      <ul class="list">
+        <li class="item">
+          <a href="">
+            Cadetes
+          </a>
+        </li>
+        <li class="item">
+          <a href="">
+            Clientes
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+<!--
+
+
+<ul class="list-container">
+  <li class="list-viajes--container">
+    <div class="title-list">
+      <div class="title-list--content">
+        <div class="icon-content">
+
+        </div>
+        <button (click)="changeState()" *ngIf="mostrarViajes; else ocultarViajes"><i
+            class='bx bx-chevron-down'></i></button>
+          </div>
+          <ng-template #ocultarViajes>
+            <button (click)="changeState()"><i class='bx bx-chevron-up'></i></button>
+          </ng-template>
+    </div>
+    <ul class="list-viajes--content" [class.active]=" mostrarViajes">
+      <li class="item-list">
+        <a [routerLink]="['../admin/viajes/activos']" routerLinkActive="router-link-active">Activos</a>
+      </li>
+      <li class="item-list">
+        <a [routerLink]="['../admin/viajes/pendientes']" routerLinkActive="router-link-active">Pendientes</a>
+      </li>
+      <li>
+        <a [routerLink]="['../admin/viajes/en-curso']" routerLinkActive="router-link-active" class="item-list">En
+          Curso</a>
+      </li>
+    </ul>
+  </li>
+  <li class="list-usuarios--container">
+    <div class="title-list">
+      <div class="title-list--content">
+        <div class="icon-content">
+          <a href=""><i class='bx bxs-user'></i></a>
+          <p>Usuarios</p>
+        </div>
+        <button (click)="changeStateUsuarios()" *ngIf="mostrarUsuario; else ocultarUsuarios">
+          <i class='bx bx-chevron-down'></i>
+        </button>
+      </div>
+
+      <ng-template #ocultarUsuarios>
+        <button (click)="changeStateUsuarios()"><i class='bx bx-chevron-up'></i></button>
+      </ng-template>
+    </div>
+    <ul class="list-usuario--content" [class.active]=" mostrarUsuario">
+      <li class="item-list">Cadetes</li>
+      <li class="item-list">Clientes</li>
+    </ul>
+  </li>
+</ul> -->

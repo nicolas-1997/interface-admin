@@ -1,0 +1,69 @@
+<div #columnaContainer class="columna-container" [class.active]="state">
+  <div class="columnas">
+    <div class="col uno">
+      <p>
+         {{col1}}
+      </p>
+     </div>
+     <div class="col dos">
+      <p>
+         {{col2}}
+      </p>
+     </div>
+     <div class="col tres">
+      <p>
+         {{col3 | statusTravelTraductor}}
+      </p>
+      <div class="changeState">
+        <button (click)="changeState()" ><i class='bx bx-chevron-down'></i></button>
+      </div>
+     </div>
+  </div>
+  <form class="option" *ngIf="state" [formGroup]="formChangeState" (ngSubmit)="changeStatusTravel()">
+    <div class="input-group uno">
+     <div class="input-content">
+      <input type="number" placeholder="Id Cadete" formControlName="idCadete">
+      <!-- <button>Cadetes Disponibles</button> -->
+     </div>
+    </div>
+    <div class="input-group dos">
+      <textarea name="observations" id="" cols="20" rows="4" placeholder="¿Por que realiza este cambio?" formControlName="observation"></textarea>
+    </div>
+    <div class="input-group tres">
+      <label for="statusTravels"> Nuevo Estado de viaje </label>
+      <select name="statusTravels" id="statusTravels" formControlName="statusTravel">
+        <option value="1">Pendiente a retirar</option>
+        <option value="2">Retiro Asignado</option>
+        <option value="3">Retirado</option>
+        <option value="4">Pendiente a Repearar</option>
+        <option value="5">Reparado</option>
+        <option value="6">Entrega Asignada</option>
+        <option value="7">Pendiente a Entregar</option>
+        <option value="8">Entregado</option>
+        <option value="9">Recibido</option>
+        <option value="10">Renunciado</option>
+      </select>
+    </div>
+    <div class="input-group cuatro">
+      <button type="submit" [disabled]="formChangeState.invalid" >Cambiar Estado</button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+<!-- <ul class="list-state" [class.active]="state">
+  <li (click)="changeStatusTravel(1)" class="state">Pendiente a retirar</li>
+  <li (click)="changeStatusTravel(2)" class="state">Retiro Asignado</li>
+  <li (click)="changeStatusTravel(3)" class="state">Retirado</li>
+  <li (click)="changeStatusTravel(4)" class="state">Pendiente a Repearar</li>
+  <li (click)="changeStatusTravel(5)" class="state">Reparado</li>
+  <li (click)="changeStatusTravel(6)" class="state">Entrega Asignada</li>
+  <li (click)="changeStatusTravel(7)" class="state">Pendiente a Entrega</li>
+  <li (click)="changeStatusTravel(8)" class="state">Entregado</li>
+  <li (click)="changeStatusTravel(9)" class="state">Recibido</li>
+  <li (click)="changeStatusTravelCancel()" class="state cancel">Renunciado</li>
+</ul> -->

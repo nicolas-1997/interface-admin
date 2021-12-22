@@ -1,0 +1,23 @@
+<div class="login-container">
+  <div class="login-content">
+    <form [formGroup]="login" (ngSubmit)="loginData()">
+      <div class="input-group email">
+        <label for="email"> Email </label>
+        <input type="email" name="email" placeholder="Enter your Email" formControlName="email">
+        <p *ngIf="errorDatos">Datos Incorrectos</p>
+      </div>
+      <div class="input-group password">
+        <label for="email">Password</label>
+        <input type="password" name="password" placeholder="Enter your password" formControlName="password">
+        <p *ngIf="errorDatos">Datos Incorrectos</p>
+      </div>
+      <div class="btn-container">
+        <button type="submit" class="btn" [disabled]="login.invalid" >Login</button>
+      </div>
+    </form>
+    <div class="sesion-iniciada" *ngIf="sesionIniciada">
+      <h1>Sesion iniciada!</h1>
+    </div>
+  </div>
+
+</div>

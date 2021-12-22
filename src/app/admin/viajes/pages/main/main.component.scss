@@ -1,0 +1,111 @@
+.main-container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 85%;
+
+  .header {
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 1.5rem 0 1.2rem 0;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  .options--container {
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+    grid-template-rows: 100%;
+
+    .option-content {
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: white;
+      .option {
+        width: 80%;
+        height: 50%;
+        border: none;
+        border-radius: 12px;
+        background-color: var(--background-soft);
+        justify-content: flex-start;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        .icon-content {
+          width: 100%;
+          height: 25%;
+          margin-top: 3rem;
+          i {
+            font-size: 5rem;
+          }
+        }
+        .text {
+          width: 80%;
+          height: 75%;
+          justify-content: flex-start;
+
+          h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+            color: white;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--green);
+            line-height: 2.3rem;
+          }
+        }
+      }
+    }
+
+    .option:hover{
+      cursor: pointer;
+      animation: scale 0.2s forwards ease-in-out;
+    }
+    .option-content,
+    .option,
+    .icon-content,
+    .text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+@keyframes scale {
+  0%{
+    transform: scale(1);
+  }
+  10%{
+    transform: scale(1.05);
+  }
+  25%{
+    transform: scale(1.075);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  75%{
+    transform: scale(1.1.5);
+  }
+  95%{
+    transform: scale(1.1.75);
+  }
+  100%{
+    transform: scale(1.2);
+  }
+}

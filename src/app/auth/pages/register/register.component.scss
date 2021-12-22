@@ -1,0 +1,86 @@
+.register-container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  .register-content {
+    width: 80%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 90%;
+
+    form{
+      width: 100%;
+      height: 100%;
+
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(5,18%) 10%;
+      place-items: center;
+      .input-group{
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        label{
+          margin-left: 2rem;
+          font-size: 2rem;
+        }
+        input{
+          margin: 0.5rem 0;
+          align-self: center;
+          width: 80%;
+          height: 3rem;
+          border: none;
+          border-radius: 18px;
+          background-color: var(--background-dark2);
+
+          text-align: center;
+          font-size: 1.5rem;
+          color: white;
+        }
+        input::placeholder {
+          color: var(--green);
+        }
+        p{
+          font-size: 1.2rem;
+          margin-left: 5rem;
+        }
+        .name{
+          grid-row: 1;
+        }
+        .email{
+          grid-row: 2;
+        }
+        .password{
+          grid-row: 3;
+        }
+        .addres{
+          grid-row: 4;
+        }
+        .telefono{
+          grid-row: 5;
+        }
+      }
+
+        button{
+          grid-row: 6;
+
+          width: 70%;
+          height: 2.5rem;
+          border-radius: 4px;
+          border: none;
+          background-color: var(--green);
+      }
+    }
+
+
+
+  }
+}

@@ -1,0 +1,53 @@
+<div class="layout-container">
+  <div class="header">
+    <div class="logo">
+      <a href=""><i class='bx bx-home-alt'></i></a>
+      <h1>Todo IT</h1>
+    </div>
+
+    <div class="menu--container">
+      <button (click)="changeStateMenu()"><i class='bx bx-menu'></i></button>
+      <ul class="list" *ngIf="menuState">
+        <li>
+          <a [routerLink]="['/admin/users/register-admin']" routerLinkActive="router-link-active" >
+            <i class='bx bxs-user-plus'></i>
+            <p>Admin</p>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/admin/users/register-cadete']" routerLinkActive="router-link-active">
+            <i class='bx bxs-user-plus'></i>
+            <p>Cadete</p>
+          </a>
+        </li>
+        <li>
+          <button (click)="cerrarSesion()">
+            <i class='bx bx-log-out'></i>
+            <p>Cerrar Sesion</p>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="body--container sidebarActive" [class.sidebarDesactive]="sidebarState">
+    <div class="sidebar">
+      <div class="btn-content">
+        <button #btn class="btn" *ngIf="sidebarState; else open" (click)=" sidebar()">
+          <i class='bx bx-chevrons-right'></i>
+        </button>
+        <ng-template #open>
+          <button class="btn" (click)=" sidebar()">
+            <i class='bx bx-chevrons-left'></i>
+          </button>
+        </ng-template>
+      </div>
+      <div class="list-container">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

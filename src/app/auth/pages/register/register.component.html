@@ -1,0 +1,40 @@
+<div class="register-container">
+  <div class="register-content">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+      <div class="input-group name">
+        <!-- <label for="">Nombre Completo</label> -->
+        <input type="text" name="name" id="name" placeholder="Nomobre y Apellido" formControlName="fullName">
+        <p>Dato Invalido</p>
+      </div>
+
+      <div class="input-group email">
+        <!-- <label for="">email</label> -->
+        <input type="email" name="email" id="email" placeholder="email" formControlName="email">
+        <p>Dato Invalido</p>
+      </div>
+
+      <div class="input-group password">
+        <!-- <label for="">password</label> -->
+        <input type="password" name="password" id="password" placeholder="password" formControlName="password">
+        <p>Dato Invalido</p>
+      </div>
+
+      <div class="input-group addres">
+        <!-- <label for="">direccion</label> -->
+        <input type="text" name="direccion" id="direccion" placeholder="direccion" formControlName="address">
+        <p>Dato Invalido</p>
+      </div>
+
+      <div class="input-group telefono">
+        <!-- <label for="">telefono</label> -->
+        <input type="number" name="telefono" id="telefono" placeholder="telefono" formControlName="cellPhone">
+        <p>Dato Invalido</p>
+      </div>
+      <button>Registrar</button>
+      <!-- <div class="button-content">
+
+      </div> -->
+    </form>
+  </div>
+</div>

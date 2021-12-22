@@ -1,0 +1,43 @@
+<div class="viajes-activos--activo">
+  <div class="viajes-activos--content">
+    <div class="header">
+      <h1>Lista de Viajes {{title}}</h1>
+    </div>
+    <div class="body">
+      <div class="table-content">
+        <div class="head-table">
+          <div class="head-col">
+            <h3>Cliente</h3>
+          </div>
+          <div class="head-col">
+            <h3>Direccion</h3>
+          </div>
+          <div class="head-col">
+            <h3>Estado</h3>
+          </div>
+        </div>
+        <div class="body-table">
+          <div class="ngFor">
+            <!--*ngFor="let item of allTravel"-->
+            <div class="table" *ngFor="let item of allTravel | paginatorDos:page_size:page_number">
+              <app-columna [col1]="item.travelEquipmentDTOs[0].equipment.cliente.fullName"
+                [col2]="item.travelEquipmentDTOs[0].equipment.cliente.address"
+                [col3]="item.lastStatusTravel ? item.lastStatusTravel : item.travelEquipmentDTOs[item.travelEquipmentDTOs.length-1].statusTravel"
+                [travelId]="item.id"
+                [cadeteId]="item.travelEquipmentDTOs[item.travelEquipmentDTOs.length-1].cadete ? item.travelEquipmentDTOs[item.travelEquipmentDTOs.length-1].cadete.id : 0">
+              </app-columna>
+            </div>
+          </div>
+        </div>
+        <div class="paginator">
+          <mat-paginator [length]="allTravel.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
+            (page)="handlePage($event)" aria-label="Select page">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <mat-paginator [length]="allTravel.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
+            (page)="handlePage($event)" aria-label="Select page">
+          </mat-paginator> -->

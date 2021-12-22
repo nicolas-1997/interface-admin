@@ -1,0 +1,54 @@
+.home--conteiner{
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 85%;
+
+  h1{
+    grid-row: 1;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .card-container{
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 60%;
+      height: 40%;
+      backdrop-filter: blur(1px);
+      border: none;
+      background: rgb(30,69,59);
+      background: linear-gradient(110deg, rgba(30,69,59,1) 40%, rgba(11,114,94,1) 100%);
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+
+      &.usuario {
+        background: rgb(164, 8, 27);
+        background: linear-gradient(100deg, rgba(164, 8, 27, 1) 49%, rgba(236, 11, 35, 1) 95%);
+      }
+
+
+      h1{
+        font-size: 1.8rem;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+        p,i{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

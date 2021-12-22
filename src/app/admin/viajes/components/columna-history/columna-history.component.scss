@@ -1,0 +1,29 @@
+.columna-container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%;
+  height: 7rem;
+
+  .columnas{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 7rem;
+
+    .col{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p{
+        color: var(--green);
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

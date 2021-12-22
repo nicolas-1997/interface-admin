@@ -1,0 +1,52 @@
+<div class="lista-completa--container">
+  <div class="header">
+    <h1>Lista {{title}}</h1>
+  </div>
+  <div class="lista-completa">
+    <section class="search">
+      <input type="text" placeholder="Buscar Usuario" name="filterUser" [(ngModel)]="filterUser">
+      <button>
+        <i class='bx bx-search-alt'></i>
+      </button>
+    </section>
+    <section class="body">
+      <div class="table">
+        <div class="head-table">
+          <div class="col">Nombre Completo</div>
+          <div class="col">Rol</div>
+          <div class="col">Direccion</div>
+          <div class="col">Telefono</div>
+          <div class="col">Email</div>
+          <div class="col">Vehiculo</div>
+          <div class="col">Edit</div>
+        </div>
+       <div class="body-table--content">
+        <div class="body-table" *ngFor="let user of allUser | filter:filterUser | paginatorUser:page_size:page_number ">
+          <app-user-column
+            [id]="user.id"
+            [fullName]="user.fullName ? user.fullName : 'No encontro el nombre'"
+            [rol]='user.rol.name'
+            [address]="user.address"
+            [cellPhone]="user.cellPhone"
+            [email]="user.email"
+            [vehicle]="user.vehicle ? user.vehicle.name : 'no especificado' "
+            [isAccepted]="user.isAccepted ? user.isAccepted : true "
+            [isDeleted]="user.isDeleted ? user.isDeleted : false"
+            [observations]="user.observations"
+            [password]="user.password"
+            [rolID]="user.rol.id"
+            [rolName]="user.rol.name"
+            [rolisDeleted]="user.rol.isDeleted ? user.rol.isDeleted : 0"
+          ></app-user-column>
+        </div>
+       </div>
+        <div class="footer-table">
+          <mat-paginator [length]="allUser.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
+            (page)="handlePage($event)" aria-label="Select page">
+          </mat-paginator>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+>

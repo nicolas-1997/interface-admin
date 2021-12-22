@@ -1,0 +1,47 @@
+<div class="main-container">
+  <div class="header">
+    <h1>Viajes</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+  </div>
+  <div class="options--container">
+    <a [routerLink]="['./activos']" routerLinkActive="router-link-active"  class="option-content">
+      <div class="option">
+        <div class="icon-content">
+          <i class='bx bx-check-double'></i>
+        </div>
+        <div class="text">
+          <h1 >
+            Activos
+          </h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </a>
+    <a [routerLink]="['./pendientes']" routerLinkActive="router-link-active" class="option-content">
+      <div class="option">
+        <div class="icon-content">
+          <i class='bx bx-stopwatch'></i>
+        </div>
+        <div class="text">
+          <h1 >
+              Pendientes
+          </h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </a>
+    <a [routerLink]="['./en-curso']" routerLinkActive="router-link-active" (click)="imprimir()" class="option-content">
+      <div class="option">
+        <div class="icon-content">
+          <i class='bx bx-timer'></i>
+        </div>
+        <div class="text">
+          <h1 >
+              En Curso
+          </h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

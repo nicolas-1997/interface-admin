@@ -1,0 +1,85 @@
+.columna-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 7rem 14rem;
+  width: 100%;
+  height: 7rem;
+
+  &.active{
+    height: 25rem;
+  }
+
+  .columnas {
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 14.2%);
+    height: 7rem;
+
+    .col {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p,button {
+        color: var(--green);
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        background: none;
+        i{
+          font-size: 1.8rem;
+          margin-right: 1.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .edit-col{
+    grid-row: 2;
+    width: 100%;
+    height: 18rem;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 20%;
+    place-items: center;
+
+    .input-group{
+      grid-row: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+      grid-template-rows: 50% 50%;
+
+      input{
+        margin: 1rem 1rem;
+        width: 95%;
+        height: 3.5rem;
+        border: none;
+        border-radius: 8px;
+        text-align: center;
+        background-color: var(--green);
+        color: white;
+      }
+      input::placeholder{
+        color: white;
+      }
+    }
+    button{
+      margin-bottom: 1rem;
+      grid-row: 2;
+      width: 50%;
+      height: 3rem;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--green);
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

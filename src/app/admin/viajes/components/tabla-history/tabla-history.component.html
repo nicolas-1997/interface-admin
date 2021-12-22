@@ -1,0 +1,50 @@
+<div class="tabla-history--container">
+  <div class="table-history--content">
+    <!-- Inicio Header -->
+    <section class="header">
+      <h1>Historial de viajes</h1>
+    </section>
+    <!-- Fin Header -->
+    <!-- Inicio Body -->
+    <section class="body">
+      <!-- inicio Tabla -->
+      <div class="tabla">
+        <!-- Inicio header table -->
+        <section class="tabla-header">
+          <div class="col uno">Cadete</div>
+          <div class="col dos">Cliente</div>
+          <div class="col tres">Fecha</div>
+          <div class="col cuatro">Hora</div>
+          <div class="col cinco">Estado del equipo</div>
+        </section>
+        <!-- Fin header table -->
+        <!-- Inicio Body table -->
+        <section class="tabla-body">
+          <div class="render-colum">
+            <div class="colum" *ngFor="let item of allTravel | paginatorDos:page_size:page_number">
+              <app-columna-history
+                  [cadete]="item.travelEquipmentDTOs[item.travelEquipmentDTOs.length-1].cadete.fullName"
+                  [cliente]="item.travelEquipmentDTOs[0].equipment.cliente.fullName"
+                  fecha="{{item.travelEquipmentDTOs[item.travelEquipmentDTOs.length-1].operationDate | date:'shortDate'}}"
+                  hora="{{item.travelEquipmentDTOs[item.travelEquipmentDTOs.length-1].operationDate | date:'shortTime'}}"
+                  [statusTravel]="item.lastStatusTravel | statusTravelTraductor"
+              ></app-columna-history>
+            </div>
+          </div>
+        </section>
+        <!-- Fin Body table -->
+        <!-- Inicio Paginator -->
+        <section class="paginator">
+          <mat-paginator [length]="allTravel.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
+            (page)="handlePage($event)" aria-label="Select page">
+          </mat-paginator>
+        </section>
+        <!-- Fin Paginator -->
+      </div>
+      <!-- Fin Tabla -->
+
+    </section>
+    <!-- Fin body -->
+  </div>
+</div>
+

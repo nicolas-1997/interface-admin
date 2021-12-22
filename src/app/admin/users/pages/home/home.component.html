@@ -1,0 +1,97 @@
+<div class="home-users--container">
+   <div class="header">
+    <h1>Bienvenido al Modulo de Usuarios</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo, odio voluptatem sit quidem dignissimos?</p>
+   </div>
+   <div class="body">
+     <section class="main-container">
+
+      <div class="card admin">
+
+        <div class="info-card">
+          <div class="title">
+            <h1>admin</h1>
+            <i class='bx bxs-user'></i>
+          </div>
+          <a [routerLink]="['../admin-list']" routerLinkActive="router-link-active">
+            Lista de Admins
+            <i class='bx bx-right-arrow-alt'></i>
+          </a>
+        </div>
+
+        <div class="cant-user">
+          <h1>{{listAdmin.length}}</h1>
+          <p>totales</p>
+        </div>
+
+      </div>
+
+      <div class="card cliente">
+        <div class="info-card">
+          <div class="title">
+            <h1>cliente</h1>
+            <i class='bx bxs-user'></i>
+          </div>
+          <a [routerLink]="['../cliente-list']" routerLinkActive="router-link-active" >
+            Lista de clientes
+            <i class='bx bx-right-arrow-alt'></i>
+          </a>
+        </div>
+
+        <div class="cant-user">
+          <h1> {{listClientes.length}} </h1>
+          <p>totales</p>
+        </div>
+
+      </div>
+      <div class="card cadete">
+        <div class="info-card">
+          <div class="title">
+            <h1>cadete</h1>
+            <i class='bx bxs-user'></i>
+          </div>
+          <a [routerLink]="['../cadete-list']" routerLinkActive="router-link-active">
+            Lista de Cadetes
+            <i class='bx bx-right-arrow-alt'></i>
+          </a>
+        </div>
+
+        <div class="cant-user">
+          <h1>{{listCadete.length}}</h1>
+          <p>totales</p>
+        </div>
+
+      </div>
+      <div class="card info">
+        <div class="info-card">
+          <div class="title">
+            <h1>Lista de Usuarios</h1>
+            <i class='bx bx-list-ul'></i>
+          </div>
+          <a [routerLink]="['../all-user']" routerLinkActive="router-link-active">
+           Lista de Usuarios completa
+          </a>
+        </div>
+        <div class="cant-user">
+          <h1>{{listAdmin.length + listClientes.length + listCadete.length}}</h1>
+          <p>totales</p>
+        </div>
+      </div>
+<!--
+      <div class="card info">
+        <div class="info-card">
+          <div class="title">
+            <h1>Editar Usuario</h1>
+            <i class='bx bxs-user'></i>
+          </div>
+          <p>
+            Edita un usuario en especifico
+          </p>
+        </div>
+        <div class="cant-user">
+          <i class='bx bxs-edit'></i>
+        </div>
+      </div> -->
+    </section>
+   </div>
+</div>

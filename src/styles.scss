@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --background-dark: #24292f;
+  --background-dark2: #21262c;
+  --background-soft: #2e373e;
+  --green: #0b725e;
+  --red: #a71c17;
+  --mostaza: #d07407;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100vh;
+  width: 100%;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  background: rgb(33, 38, 44);
+  background: linear-gradient(100deg, rgba(33, 38, 44, 1) 53%, rgba(46, 55, 62, 1) 100%);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
